@@ -1,0 +1,9 @@
+solar:
+  title: Solar
+  url: https://grafana.saltis.duckdns.org/d/hxf61m5iz/saltis?refresh=30s&orgId=1&theme=dark
+  icon: mdi:white-balance-sunny
+
+tasmoadmin:
+  title: TasmoAdmin
+  url: https://tasmota.saltis.duckdns.org
+  icon: mdi:home-automation

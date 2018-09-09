@@ -1,0 +1,118 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longtitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 67
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Vilnius
+  # Customization file
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: https://hass.saltis.duckdns.org
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+mqtt:
+  broker: 192.168.1.177
+  port: 1883
+  client_id: home-assistant
+  keepalive: 60
+  birth_message:
+    topic: tele/hass1/LWT
+    payload: Online
+    qos: 1
+    retain: true
+  will_message:
+    topic: tele/hass1/LWT
+    payload: Offline
+    qos: 1
+    retain: true
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+weather:
+  - platform: openweathermap
+    api_key: !secret openweathermap_api
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+influxdb:
+  override_measurement: state
+  max_retries: 10
+
+image_processing:
+  # - platform: dlib_face_identify
+  #   source:
+  #     - entity_id: camera.hikvision
+  #   faces:
+  #     Julius: /config/faces/Julius.jpg
+  #     Tetis: /config/faces/Tetis.jpg
+
+device_tracker:
+  - platform: thomson
+    host: 192.168.1.254
+    username: admin
+    password: 951zaq95
+
+history_graph:
+  fronius:
+    name: Fronius Powerflow
+    entities:
+      - sensor.generation
+      - sensor.consumption
+      - sensor.grid
+      - sensor.voltage
+    refresh: 60
+
+openuv:
+  api_key: 6cda4c86756af802ee865755e188e4a1 
+
+panel_iframe: !include panels.yaml
+camera: !include cameras.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

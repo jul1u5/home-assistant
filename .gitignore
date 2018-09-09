@@ -1,0 +1,18 @@
+# Home Assistant
+.cloud/
+.storage/
+custom_components/
+deps/
+tts/
+home-assistant_v2.db
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
+home-assistant.log
+.HA_VERSION
+.uuid
+
+# Configuration
+/www
+/faces
+fitbit.conf
+secrets.yaml

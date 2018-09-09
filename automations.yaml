@@ -1,0 +1,24 @@
+- alias: 'Set dark theme for the night'
+  initial_state: True
+  trigger:
+    - platform: time
+      at: '21:00'
+  action:
+    - service: frontend.set_theme
+      data:
+        name: darkred
+        
+- alias: "Power state on HA start-up"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/SetOption19"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/state"
+        payload: ""
+

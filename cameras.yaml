@@ -1,0 +1,12 @@
+# - platform: synology
+#   url: https://saltis.duckdns.org
+#   name: synology_cam
+#   username: !secret synology_username
+#   password: !secret synology_password
+
+- platform: generic
+  still_image_url: http://192.168.1.66/ISAPI/Streaming/channels/1/picture
+  name: hikvision
+  username: !secret hikvision_username
+  password: !secret hikvision_password
+  authentication: digest

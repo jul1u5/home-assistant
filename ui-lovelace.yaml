@@ -1,0 +1,60 @@
+# resources:
+#   - url: /local/custom_ui/push-button.js
+#     type: js
+
+title: Home
+views:
+  - title: Home
+    id: home
+    cards:
+      - type: picture-entity
+        title: Hikvision
+        entity: camera.hikvision
+        show_name: false
+        show_state: false
+
+      - type: glance
+        title: Sonoff
+        show_header_toggle: true
+        entities:
+          - entity: switch.sonoff_dual_power_1
+            name: Gates
+            icon: mdi:door
+            tap_action: toggle
+          - entity: switch.sonoff_dual_power_2
+            name: Garage
+            icon: mdi:garage
+          # - image_processing.dlib_face_hikvision
+          # - entity: switch.sonoff_th10_power
+          #   name: TH10
+          # - entity: sensor.sonoff_th10_humidity
+          #   name: Humidity
+          # - entity: sensor.sonoff_th10_temperature
+          #   name: Temperature
+
+      - type: iframe
+        url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?refresh=60s&orgId=1&panelId=6
+
+      - type: weather-forecast
+        entity: weather.openweathermap
+
+      - type: iframe
+        url: https://embed.windy.com/embed2.html
+        aspect_ratio: 75%
+
+      - type: entities
+        title: SpeedTest
+        show_header_toggle: true
+        entities:
+          - sensor.speedtest_download
+          - sensor.speedtest_ping
+          - sensor.speedtest_upload
+
+      - type: entities
+        title: UV
+        show_header_toggle: true
+        entities:
+          - sensor.current_ozone_level
+          - sensor.current_uv_index
+          - sensor.current_uv_level
+          - sensor.max_uv_index
