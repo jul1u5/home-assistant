@@ -12,7 +12,7 @@ home-assistant.log
 .uuid
 
 # Configuration
-/www
-/faces
+www/
+files/
 fitbit.conf
 secrets.yaml
