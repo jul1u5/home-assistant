@@ -1,24 +1,23 @@
 - alias: 'Set dark theme for the night'
-  initial_state: True
+  initial_state: ON
   trigger:
-    - platform: time
-      at: '21:00'
+    platform: time
+    at: '21:00:00'
   action:
     - service: frontend.set_theme
       data:
-        name: darkred
-        
-- alias: "Power state on HA start-up"
-  trigger:
-    platform: homeassistant
-    event: start
-  action:
-    - service: mqtt.publish
-      data:
-        topic: "cmnd/sonoffs/SetOption19"
-        payload: "1"
-    - service: mqtt.publish
-      data:
-        topic: "cmnd/sonoffs/state"
-        payload: ""
+        name: dark_red
 
+- alias: Lock gates after opening them
+  initial_state: ON
+  trigger:
+    platform: mqtt
+    topic: stat/sonoff-dual/POWER1
+    payload: 'ON'
+  action:
+    - delay:
+        seconds: 01
+    - service: mqtt.publish
+      data:
+        topic: cmnd/sonoff-dual/POWER1
+        payload: 'OFF'
