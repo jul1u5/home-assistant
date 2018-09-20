@@ -15,7 +15,7 @@ views:
 
       - type: glance
         title: Sonoff
-        show_header_toggle: true
+        show_state: false
         entities:
           - entity: switch.sonoff_dual_power_1
             name: Gates
@@ -24,7 +24,10 @@ views:
           - entity: switch.sonoff_dual_power_2
             name: Garage
             icon: mdi:garage
-          # - image_processing.dlib_face_hikvision
+            tap_action: toggle
+          - entity: image_processing.dlib_face_motion_detection
+            name: Faces
+            icon: mdi:face
           # - entity: switch.sonoff_th10_power
           #   name: TH10
           # - entity: sensor.sonoff_th10_humidity

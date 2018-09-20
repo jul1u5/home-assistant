@@ -21,3 +21,17 @@
       data:
         topic: cmnd/sonoff-dual/POWER1
         payload: 'OFF'
+
+- alias: Turn off garage door switch
+  initial_state: ON
+  trigger:
+    platform: mqtt
+    topic: stat/sonoff-dual/POWER2
+    payload: 'ON'
+  action:
+    - delay:
+        seconds: 01
+    - service: mqtt.publish
+      data:
+        topic: cmnd/sonoff-dual/POWER2
+        payload: 'OFF'
