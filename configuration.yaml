@@ -82,19 +82,27 @@ influxdb:
   override_measurement: state
   max_retries: 10
 
-image_processing:
-  # - platform: dlib_face_identify
-  #   source:
-  #     - entity_id: camera.hikvision
-  #   faces:
-  #     Julius: /config/faces/Julius.jpg
-  #     Tetis: /config/faces/Tetis.jpg
+# image_processing:
+#   - platform: dlib_face_identify
+#     source:
+#       - entity_id: camera.motion_detection
+#     faces:
+#       Julius: /config/files/faces/Julius.jpg
+#       Tetis: /config/files/faces/Tetis.jpg
+#   - platform: facebox
+#     ip_address: 192.168.1.177
+#     port: 8080
+#     source:
+#       - entity_id: camera.motion_detection
 
-device_tracker:
-  - platform: thomson
-    host: 192.168.1.254
-    username: admin
-    password: 951zaq95
+# device_tracker:
+#   - platform: thomson
+#     host: 192.168.1.254
+#     username: !secret gateway_username
+#     password: !secret gateway_password
+
+openuv:
+  api_key: !secret openuv_api 
 
 history_graph:
   fronius:
@@ -105,9 +113,6 @@ history_graph:
       - sensor.grid
       - sensor.voltage
     refresh: 60
-
-openuv:
-  api_key: 6cda4c86756af802ee865755e188e4a1 
 
 panel_iframe: !include panels.yaml
 camera: !include cameras.yaml
