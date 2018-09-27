@@ -16,7 +16,7 @@
     payload: 'ON'
   action:
     - delay:
-        seconds: 01
+        seconds: 05
     - service: mqtt.publish
       data:
         topic: cmnd/sonoff-dual/POWER1
@@ -30,7 +30,7 @@
     payload: 'ON'
   action:
     - delay:
-        seconds: 01
+        seconds: 05
     - service: mqtt.publish
       data:
         topic: cmnd/sonoff-dual/POWER2
