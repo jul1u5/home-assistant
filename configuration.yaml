@@ -102,7 +102,7 @@ influxdb:
 #     password: !secret gateway_password
 
 openuv:
-  api_key: !secret openuv_api 
+  api_key: !secret openuv_api
 
 history_graph:
   fronius:
