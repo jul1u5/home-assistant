@@ -15,7 +15,7 @@
     - Body
   value_template: >-
     {{ value_json.Body.Data.Site.Meter_Location }}
-  scan_interval: 60
+  scan_interval: 300
 
 - platform: template
   sensors:
@@ -60,7 +60,7 @@
       {{ value_json.Body.Data.UDC.Value | float }}
     {% endif %}
   unit_of_measurement: V
-  scan_interval: 60
+  scan_interval: 300
 
 # - platform: fronius
 #   host: 192.168.1.209
