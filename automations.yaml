@@ -1,4 +1,4 @@
-- alias: 'Set dark theme for the night'
+- alias: Set dark theme for the night
   initial_state: ON
   trigger:
     platform: time
