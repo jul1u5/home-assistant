@@ -69,14 +69,14 @@
 
 - platform: mqtt
   name: Sonoff TH10 Temperature
-  state_topic: tele/sonoff/SENSOR
+  state_topic: tele/sonoff-th10/SENSOR
   value_template: >-
-    {{ value_json.AM2301.Temperature }}
+    {{ value_json.AM2301.Temperature | float }}
   device_class: temperature
 
 - platform: mqtt
   name: Sonoff TH10 Humidity
-  state_topic: tele/sonoff/SENSOR
+  state_topic: tele/sonoff-th10/SENSOR
   value_template: >-
-    {{ value_json.AM2301.Humidity }}
+    {{ value_json.AM2301.Humidity | float }}
   device_class: humidity

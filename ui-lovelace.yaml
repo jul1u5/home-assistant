@@ -7,13 +7,15 @@ views:
   - title: Home
     id: home
     cards:
-      - type: picture-entity
+      - id: 232896fe8cf1455f89774ccdbfa60eec  # Automatically created id
+        type: picture-entity
         title: Hikvision
         entity: camera.hikvision
         show_name: false
         show_state: false
 
-      - type: glance
+      - id: 7b997a9fbd8e425f9e98dc2ca9c0dd6a  # Automatically created id
+        type: glance
         title: Sonoff
         show_state: false
         entities:
@@ -25,39 +27,38 @@ views:
             name: Garage
             icon: mdi:garage
             tap_action: toggle
-          - entity: image_processing.dlib_face_motion_detection
-            name: Faces
-            icon: mdi:face
-          # - entity: switch.sonoff_th10_power
-          #   name: TH10
-          # - entity: sensor.sonoff_th10_humidity
-          #   name: Humidity
-          # - entity: sensor.sonoff_th10_temperature
-          #   name: Temperature
+          - entity: switch.sonoff_th10_power
+            name: Lights
+            tap_action: toggle
 
-      - type: iframe
+      - id: 63ebbb3a6c3e44198a48635978793c34  # Automatically created id
+        type: iframe
         url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?refresh=60s&orgId=1&panelId=6
 
-      - type: weather-forecast
-        entity: weather.openweathermap
+      - type: sensor
+        entity: sensor.sonoff_th10_temperature
+        name: Temperature
+        unit: °C
 
-      - type: iframe
+      - type: sensor
+        entity: sensor.sonoff_th10_humidity
+        name: Humidity
+        unit: '%'
+
+      - id: 31b9042312cb4630bf225a18650598e0  # Automatically created id
+        type: iframe
         url: https://embed.windy.com/embed2.html
         aspect_ratio: 75%
 
-      - type: entities
+      - id: fddabf670df5428baf6956b1f6f9b303  # Automatically created id
+        type: weather-forecast
+        entity: weather.openweathermap
+
+      - id: 8208817d067243619f268eb8e706320b  # Automatically created id
+        type: entities
         title: SpeedTest
         show_header_toggle: true
         entities:
           - sensor.speedtest_download
           - sensor.speedtest_ping
           - sensor.speedtest_upload
-
-      - type: entities
-        title: UV
-        show_header_toggle: true
-        entities:
-          - sensor.current_ozone_level
-          - sensor.current_uv_index
-          - sensor.current_uv_level
-          - sensor.max_uv_index
