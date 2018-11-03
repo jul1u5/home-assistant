@@ -38,12 +38,10 @@ views:
       - type: sensor
         entity: sensor.sonoff_th10_temperature
         name: Temperature
-        unit: °C
 
       - type: sensor
         entity: sensor.sonoff_th10_humidity
         name: Humidity
-        unit: '%'
 
       - id: 31b9042312cb4630bf225a18650598e0  # Automatically created id
         type: iframe
