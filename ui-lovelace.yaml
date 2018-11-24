@@ -1,20 +1,17 @@
-# resources:
-#   - url: /local/custom_ui/push-button.js
-#     type: js
-
 title: Home
 views:
   - title: Home
+    icon: mdi:home
     id: home
     cards:
-      - id: 232896fe8cf1455f89774ccdbfa60eec  # Automatically created id
+      - id: 232896fe8cf1455f89774ccdbfa60eec # Automatically created id
         type: picture-entity
         title: Hikvision
         entity: camera.hikvision
         show_name: false
         show_state: false
 
-      - id: 7b997a9fbd8e425f9e98dc2ca9c0dd6a  # Automatically created id
+      - id: 7b997a9fbd8e425f9e98dc2ca9c0dd6a # Automatically created id
         type: glance
         title: Sonoff
         show_state: false
@@ -31,28 +28,12 @@ views:
             name: Lights
             tap_action: toggle
 
-      - id: 63ebbb3a6c3e44198a48635978793c34  # Automatically created id
+      - id: 63ebbb3a6c3e44198a48635978793c34 # Automatically created id
         type: iframe
         url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?refresh=60s&orgId=1&panelId=6
-
-      - type: sensor
-        entity: sensor.sonoff_th10_temperature
-        name: Temperature
-
-      - type: sensor
-        entity: sensor.sonoff_th10_humidity
-        name: Humidity
-
-      - id: 31b9042312cb4630bf225a18650598e0  # Automatically created id
-        type: iframe
-        url: https://embed.windy.com/embed2.html
         aspect_ratio: 75%
 
-      - id: fddabf670df5428baf6956b1f6f9b303  # Automatically created id
-        type: weather-forecast
-        entity: weather.openweathermap
-
-      - id: 8208817d067243619f268eb8e706320b  # Automatically created id
+      - id: 8208817d067243619f268eb8e706320b # Automatically created id
         type: entities
         title: SpeedTest
         show_header_toggle: true
@@ -60,3 +41,26 @@ views:
           - sensor.speedtest_download
           - sensor.speedtest_ping
           - sensor.speedtest_upload
+
+  - title: Weather
+    icon: mdi:cloud
+    id: weather
+    cards:
+      - id: 31b9042312cb4630bf225a18650598e0 # Automatically created id
+        type: iframe
+        url: https://embed.windy.com/embed2.html
+        aspect_ratio: 75%
+
+      - type: sensor
+        entity: sensor.sonoff_th10_temperature
+        name: Temperature
+        hours_to_show: 72
+        line_color: '#e74c3c'
+        height: 75
+
+      - type: sensor
+        entity: sensor.sonoff_th10_humidity
+        name: Humidity
+        hours_to_show: 72
+        line_color: '#3498db'
+        height: 75
