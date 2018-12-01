@@ -5,19 +5,29 @@ homeassistant:
   elevation: 67
   unit_system: metric
   time_zone: Europe/Vilnius
-  customize: !include customize.yaml
+  customize: !include config/customize.yaml
+  whitelist_external_dirs:
+    - /config
 
 frontend:
   themes: !include_dir_merge_named themes
+  javascript_version: latest
 
 config:
 
 http:
-  base_url: https://hass.saltis.duckdns.org
+  base_url: !secret base_url
 
 updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
+  include_used_components: true
+
+custom_updater:
+  show_installable: true
+  track:
+    - cards
+    - components
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json    
 
 discovery:
 
@@ -47,10 +57,6 @@ logbook:
 
 map:
 
-weather:
-  - platform: openweathermap
-    api_key: !secret openweathermap_api
-
 sun:
 
 tts:
@@ -62,25 +68,6 @@ influxdb:
   override_measurement: state
   max_retries: 10
 
-# image_processing:
-#   - platform: dlib_face_identify
-#     source:
-#       - entity_id: camera.motion_detection
-#     faces:
-#       Julius: /config/files/faces/Julius.jpg
-#       Tetis: /config/files/faces/Tetis.jpg
-#   - platform: facebox
-#     ip_address: 192.168.1.177
-#     port: 8080
-#     source:
-#       - entity_id: camera.motion_detection
-
-# device_tracker:
-#   - platform: thomson
-#     host: 192.168.1.254
-#     username: !secret gateway_username
-#     password: !secret gateway_password
-
 history_graph:
   fronius:
     name: Fronius Powerflow
@@ -90,10 +77,21 @@ history_graph:
       - sensor.voltage
     refresh: 60
 
-panel_iframe: !include panels.yaml
-camera: !include cameras.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.244
+    token: !secret vacuum_token
+
+folder_watcher:
+  - folder: /config/lovelace
+
+shell_command:
+  lovelace_gen: python /config/python_scripts/lovelace-gen.py
+
+panel_iframe: !include config/panels.yaml
+camera: !include config/cameras.yaml
+sensor: !include_dir_merge_list config/sensors
+switch: !include_dir_merge_list config/switches
+group: !include config/groups.yaml
+automation: !include_dir_merge_list config/automations
+script: !include config/scripts.yaml

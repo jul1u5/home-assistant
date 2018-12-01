@@ -1,7 +1,6 @@
 # Home Assistant
 .cloud/
 .storage/
-custom_components/
 deps/
 tts/
 home-assistant_v2.db
@@ -11,7 +10,10 @@ home-assistant.log
 .HA_VERSION
 .uuid
 
+# Python
+__pycache__/
+
 # Configuration
+www/lovelace/
 files/*
-fitbit.conf
 secrets.yaml

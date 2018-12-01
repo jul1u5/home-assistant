@@ -1,0 +1,9 @@
+solar:
+  title: Solar
+  url: !secret grafana_url
+  icon: mdi:white-balance-sunny
+
+tasmoadmin:
+  title: TasmoAdmin
+  url: !secret tasmoadmin_url
+  icon: mdi:home-automation

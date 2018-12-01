@@ -1,0 +1,38 @@
+title: Home
+icon: mdi:home
+id: home
+cards:
+  - type: picture-entity
+    title: Hikvision
+    entity: camera.hikvision
+    show_name: false
+    show_state: false
+
+  - type: horizontal-stack
+    cards:
+      - type: entity-button
+        entity: switch.sonoff_dual_power_1
+        name: Gates
+        icon: mdi:door
+        tap_action: toggle
+      - type: entity-button
+        entity: switch.sonoff_dual_power_2
+        name: Garage
+        icon: mdi:garage
+        tap_action: toggle
+      - type: entity-button
+        entity: switch.sonoff_th10_power
+        name: Lights
+        tap_action: toggle
+
+  - type: iframe
+    url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?refresh=60s&orgId=1&panelId=6
+    aspect_ratio: 75%
+
+  - type: entities
+    title: SpeedTest
+    show_header_toggle: true
+    entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_ping
+      - sensor.speedtest_upload

@@ -1,0 +1,9 @@
+- alias: Watch for file changes and run lovelace-gen
+  initial_state: ON
+  trigger:
+    platform: event
+    event_type: folder_watcher
+    event_data:
+      event_type: modified
+  action:
+    service: shell_command.lovelace_gen

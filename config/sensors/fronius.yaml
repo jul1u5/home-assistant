@@ -1,0 +1,53 @@
+- platform: rest
+  name: fronius
+  resource: http://192.168.1.209/solar_api/v1/GetPowerFlowRealtimeData.fcgi
+  json_attributes:
+    - Body
+  value_template: >-
+    {{ value_json.Body.Data.Site.Meter_Location }}
+  scan_interval: 300
+
+- platform: template
+  sensors:
+    generation:
+      value_template: >-
+        {% if states.sensor.fronius.attributes.Body.Data.Site.P_PV %}
+          {{ states.sensor.fronius.attributes.Body.Data.Site.P_PV | round | float /1000 }}
+        {% else %}
+          0
+        {% endif %}
+      unit_of_measurement: kWh
+    consumption:
+      value_template: >-
+        {{ states.sensor.fronius.attributes.Body.Data.Site.P_Load | abs | round | float /1000 }}
+      unit_of_measurement: kWh
+    grid:
+      value_template: >-
+        {{ states.sensor.fronius.attributes.Body.Data.Site.P_Grid | round | float /1000 }}
+      unit_of_measurement: kWh
+    import:
+      value_template: >-
+        {% if states.sensor.fronius.attributes.Body.Data.Site.P_Grid > 0 %}
+          {{ states.sensor.fronius.attributes.Body.Data.Site.P_Grid | round | float /1000 }}
+        {% else %}
+          0
+        {% endif %}
+      unit_of_measurement: kWh
+    export:
+      value_template: >-
+        {% if states.sensor.fronius.attributes.Body.Data.Site.P_Grid < 0 %}
+          {{ states.sensor.fronius.attributes.Body.Data.Site.P_Grid | abs | round | float /1000 }}
+        {% else %}
+          0
+        {% endif %}
+      unit_of_measurement: kWh
+
+- platform: rest
+  resource: http://192.168.1.209/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData
+  name: voltage
+  value_template: >-
+    {% if value_json.Body.Data.UDC %}
+      {{ value_json.Body.Data.UDC.Value | float }}
+    {% endif %}
+  unit_of_measurement: V
+  scan_interval: 300
