@@ -1,0 +1,23 @@
+- platform: mqtt
+  name: Sonoff Dual power 1
+  state_topic: sonoff-dual/stat/POWER1
+  command_topic: sonoff-dual/cmnd/POWER1
+  availability_topic: sonoff-dual/tele/LWT
+  qos: 1
+  payload_on: 'ON'
+  payload_off: 'OFF'
+  payload_available: Online
+  payload_not_available: Offline
+  retain: false
+
+- platform: mqtt
+  name: Sonoff Dual power 2
+  state_topic: sonoff-dual/stat/POWER2
+  command_topic: sonoff-dual/cmnd/POWER2
+  availability_topic: sonoff-dual/tele/LWT
+  qos: 1
+  payload_on: 'ON'
+  payload_off: 'OFF'
+  payload_available: Online
+  payload_not_available: Offline
+  retain: false

@@ -1,0 +1,3 @@
+# - platform: local_file
+#   name: motion_detection
+#   file_path: /config/files/camera/image.jpg

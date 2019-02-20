@@ -1,0 +1,11 @@
+- platform: mqtt
+  name: Sonoff Pow R2
+  state_topic: sonoff-powr2/stat/POWER
+  command_topic: sonoff-powr2/cmnd/POWER
+  availability_topic: sonoff-powr2/tele/LWT
+  qos: 1
+  payload_on: 'ON'
+  payload_off: 'OFF'
+  payload_available: Online
+  payload_not_available: Offline
+  retain: false

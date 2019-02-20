@@ -14,24 +14,28 @@ cards:
         entity: switch.sonoff_dual_power_1
         name: Gates
         icon: mdi:door
-        tap_action: toggle
+        tap_action:
+          action: toggle
       - type: entity-button
         entity: switch.sonoff_dual_power_2
         name: Garage
         icon: mdi:garage
-        tap_action: toggle
+        tap_action:
+          action: toggle
       - type: entity-button
         entity: switch.sonoff_th10_power
         name: Lights
-        tap_action: toggle
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
 
   - type: iframe
-    url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?refresh=60s&orgId=1&panelId=6
+    url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?orgId=1&panelId=6&refresh=60s
     aspect_ratio: 75%
 
   - type: entities
     title: SpeedTest
-    show_header_toggle: true
+    show_header_toggle: false
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_ping

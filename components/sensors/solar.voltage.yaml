@@ -1,0 +1,9 @@
+- platform: rest
+  resource: http://192.168.1.209/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData
+  name: voltage
+  value_template: >-
+    {% if value_json.Body.Data.UDC %}
+      {{ value_json.Body.Data.UDC.Value | float }}
+    {% endif %}
+  unit_of_measurement: V
+  scan_interval: 300

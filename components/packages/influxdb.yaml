@@ -1,0 +1,7 @@
+# https://www.home-assistant.io/components/influxdb/
+
+influxdb:
+  override_measurement: state
+  max_retries: 10
+  username: !secret influxdb_username
+  password: !secret influxdb_password

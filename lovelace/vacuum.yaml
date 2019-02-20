@@ -34,6 +34,7 @@ cards:
 
   - type: entities
     title: Vacuum
+    show_header_toggle: false
     entities:
       - entity: sensor.vacuum_status
       - entity: sensor.vacuum_battery

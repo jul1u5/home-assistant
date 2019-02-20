@@ -1,97 +1,24 @@
 homeassistant:
   name: Home
+
   latitude: !secret latitude
   longitude: !secret longitude
-  elevation: 67
+  elevation: !secret elevation
+
   unit_system: metric
+
   time_zone: Europe/Vilnius
-  customize: !include config/customize.yaml
+
   whitelist_external_dirs:
     - /config
 
-frontend:
-  themes: !include_dir_merge_named themes
-  javascript_version: latest
+  packages: !include_dir_named components/packages
 
-config:
+camera: !include_dir_merge_list components/cameras
+group: !include_dir_merge_list components/groups
+sensor: !include_dir_merge_list components/sensors
+switch: !include_dir_merge_list components/switches
 
-http:
-  base_url: !secret base_url
-
-updater:
-  include_used_components: true
-
-custom_updater:
-  show_installable: true
-  track:
-    - cards
-    - components
-  card_urls:
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json    
-
-discovery:
-
-mqtt:
-  broker: 192.168.1.177
-  port: 1883
-  client_id: home-assistant
-  keepalive: 60
-  birth_message:
-    topic: tele/hass1/LWT
-    payload: Online
-    qos: 1
-    retain: true
-  will_message:
-    topic: tele/hass1/LWT
-    payload: Offline
-    qos: 1
-    retain: true
-
-conversation:
-
-recorder:
-
-history:
-
-logbook:
-
-map:
-
-sun:
-
-tts:
-  - platform: google
-
-cloud:
-
-influxdb:
-  override_measurement: state
-  max_retries: 10
-
-history_graph:
-  fronius:
-    name: Fronius Powerflow
-    entities:
-      - sensor.generation
-      - sensor.consumption
-      - sensor.voltage
-    refresh: 60
-
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.1.244
-    token: !secret vacuum_token
-
-folder_watcher:
-  - folder: /config/lovelace
-
-shell_command:
-  lovelace_gen: python /config/python_scripts/lovelace-gen.py
-
-panel_iframe: !include config/panels.yaml
-camera: !include config/cameras.yaml
-sensor: !include_dir_merge_list config/sensors
-switch: !include_dir_merge_list config/switches
-group: !include config/groups.yaml
-automation: !include_dir_merge_list config/automations
-script: !include config/scripts.yaml
+automation: !include_dir_merge_list automations
+panel_iframe: !include panels/iframes.yaml
+script: !include_dir_merge_list scripts

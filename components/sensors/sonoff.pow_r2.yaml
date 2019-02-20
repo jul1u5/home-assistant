@@ -1,0 +1,79 @@
+- platform: mqtt
+  name: Sonoff Pow R2 Total
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Total | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Yesterday
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Yesterday | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Today
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Today | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Period
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Period | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Power
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Power | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Apparent Power
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.ApparentPower | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Reactive Power
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.ReactivePower | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Factor
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Factor | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Voltage
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Voltage | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
+
+- platform: mqtt
+  name: Sonoff Pow R2 Current
+  state_topic: sonoff-powr2/tele/SENSOR
+  value_template: >-
+    {{ value_json.ENERGY.Current | float }}
+  unit_of_measurement: '%'
+  device_class: humidity

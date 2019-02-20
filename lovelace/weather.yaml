@@ -38,16 +38,20 @@ cards:
 
       - break
 
-      - type: sensor
-        entity: sensor.sonoff_th10_temperature
-        name: Temperature
-        hours_to_show: 72
-        line_color: '#e74c3c'
-        height: 75
+      - type: iframe
+        url: https://grafana.saltis.duckdns.org/d-solo/7fCbHlLiz/sonoff?orgId=1&panelId=2&refresh=60s
+        aspect_ratio: 75%
 
-      - type: sensor
-        entity: sensor.sonoff_th10_humidity
-        name: Humidity
-        hours_to_show: 72
-        line_color: '#3498db'
-        height: 75
+      # - type: sensor
+      #   entity: sensor.sonoff_th10_temperature
+      #   name: Temperature
+      #   hours_to_show: 72
+      #   line_color: '#e74c3c'
+      #   height: 75
+
+      # - type: sensor
+      #   entity: sensor.sonoff_th10_humidity
+      #   name: Humidity
+      #   hours_to_show: 72
+      #   line_color: '#3498db'
+      #   height: 75

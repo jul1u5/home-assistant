@@ -1,0 +1,15 @@
+- platform: mqtt
+  name: Sonoff TH10 Temperature
+  state_topic: sonoff-th10/tele/SENSOR
+  value_template: >-
+    {{ value_json.AM2301.Temperature | float }}
+  unit_of_measurement: °C
+  device_class: temperature
+
+- platform: mqtt
+  name: Sonoff TH10 Humidity
+  state_topic: sonoff-th10/tele/SENSOR
+  value_template: >-
+    {{ value_json.AM2301.Humidity | float }}
+  unit_of_measurement: '%'
+  device_class: humidity
