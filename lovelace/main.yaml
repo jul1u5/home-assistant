@@ -1,5 +1,5 @@
 resources:
-  - url: !resource custom/tracker-card.js?v=0.1.5
+  - url: !resource custom/tracker-card.js
     type: js
   - url: !resource custom/mini-media-player-bundle.js?v=0.9.5
     type: module

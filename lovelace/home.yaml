@@ -5,6 +5,7 @@ cards:
   - type: picture-entity
     title: Hikvision
     entity: camera.hikvision
+    aspect_ratio: 4x3
     show_name: false
     show_state: false
 

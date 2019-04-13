@@ -1,57 +1,52 @@
 title: Weather
 icon: mdi:cloud
 id: weather
-panel: true
+# panel: true
 cards:
-  - type: custom:layout-card
-    layout: vertical
-    cards:
-      - type: custom:weather-card
-        entity_sun: sun.sun
-        entity_daily_summary: sensor.dark_sky_daily_summary
-        entity_current_conditions: sensor.dark_sky_icon  
-        entity_humidity: sensor.dark_sky_humidity
-        entity_pressure: sensor.dark_sky_pressure
-        entity_temperature: sensor.dark_sky_temperature
-        entity_visibility: sensor.dark_sky_visibility
-        entity_wind_bearing: sensor.dark_sky_wind_bearing
-        entity_wind_speed: sensor.dark_sky_wind_speed
-        entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
-        entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
-        entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
-        entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
-        entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
-        entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
-        entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
-        entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
-        entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
-        entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
-        entity_forecast_icon_1: sensor.dark_sky_icon_1
-        entity_forecast_icon_2: sensor.dark_sky_icon_2
-        entity_forecast_icon_3: sensor.dark_sky_icon_3
-        entity_forecast_icon_4: sensor.dark_sky_icon_4
-        entity_forecast_icon_5: sensor.dark_sky_icon_5
+  - type: custom:weather-card
+    entity_sun: sun.sun
+    entity_daily_summary: sensor.dark_sky_daily_summary
+    entity_current_conditions: sensor.dark_sky_icon  
+    entity_humidity: sensor.dark_sky_humidity
+    entity_pressure: sensor.dark_sky_pressure
+    entity_temperature: sensor.dark_sky_temperature
+    entity_visibility: sensor.dark_sky_visibility
+    entity_wind_bearing: sensor.dark_sky_wind_bearing
+    entity_wind_speed: sensor.dark_sky_wind_speed
+    entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
+    entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
+    entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
+    entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
+    entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
+    entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
+    entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
+    entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
+    entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
+    entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
+    entity_forecast_icon_1: sensor.dark_sky_icon_1
+    entity_forecast_icon_2: sensor.dark_sky_icon_2
+    entity_forecast_icon_3: sensor.dark_sky_icon_3
+    entity_forecast_icon_4: sensor.dark_sky_icon_4
+    entity_forecast_icon_5: sensor.dark_sky_icon_5
 
-      - type: iframe
-        url: https://embed.windy.com/embed2.html?lat=55.166&lon=24.148&zoom=6&level=surface&overlay=rain&message=true&calendar=now&location=coordinates
-        aspect_ratio: 75%
+  - type: iframe
+    url: https://embed.windy.com/embed2.html?lat=55.166&lon=24.148&zoom=6&level=surface&overlay=rain&message=true&calendar=now&location=coordinates
+    aspect_ratio: 75%
 
-      - break
+  - type: iframe
+    url: https://grafana.saltis.duckdns.org/d-solo/7fCbHlLiz/sonoff?orgId=1&panelId=2&refresh=60s
+    aspect_ratio: 75%
 
-      - type: iframe
-        url: https://grafana.saltis.duckdns.org/d-solo/7fCbHlLiz/sonoff?orgId=1&panelId=2&refresh=60s
-        aspect_ratio: 75%
+  # - type: sensor
+  #   entity: sensor.sonoff_th10_temperature
+  #   name: Temperature
+  #   hours_to_show: 72
+  #   line_color: '#e74c3c'
+  #   height: 75
 
-      # - type: sensor
-      #   entity: sensor.sonoff_th10_temperature
-      #   name: Temperature
-      #   hours_to_show: 72
-      #   line_color: '#e74c3c'
-      #   height: 75
-
-      # - type: sensor
-      #   entity: sensor.sonoff_th10_humidity
-      #   name: Humidity
-      #   hours_to_show: 72
-      #   line_color: '#3498db'
-      #   height: 75
+  # - type: sensor
+  #   entity: sensor.sonoff_th10_humidity
+  #   name: Humidity
+  #   hours_to_show: 72
+  #   line_color: '#3498db'
+  #   height: 75

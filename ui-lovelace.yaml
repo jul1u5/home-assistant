@@ -4,16 +4,16 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/tracker-card.js?1546514951.984902&v=0.1.5'}
-- {type: module, url: '/local/lovelace/mini-media-player-bundle.js?1546514951.984902&v=0.9.5'}
-- {type: module, url: '/local/lovelace/weather-card.js?1546514951.984902&v=1'}
-- {type: js, url: '/local/lovelace/fold-entity-row.js?1546514951.984902&v=0636ee'}
-- {type: js, url: '/local/lovelace/layout-card.js?1546514951.984902&v=7db164'}
+- {type: js, url: '/local/lovelace/tracker-card.js?1555185786.3539808'}
+- {type: module, url: '/local/lovelace/mini-media-player-bundle.js?1555185786.3539808&v=0.9.5'}
+- {type: module, url: '/local/lovelace/weather-card.js?1555185786.3539808&v=1'}
+- {type: js, url: '/local/lovelace/fold-entity-row.js?1555185786.3539808&v=0636ee'}
+- {type: js, url: '/local/lovelace/layout-card.js?1555185786.3539808&v=7db164'}
 title: Home
 views:
 - cards:
-  - {entity: camera.hikvision, show_name: false, show_state: false, title: Hikvision,
-    type: picture-entity}
+  - {aspect_ratio: 4x3, entity: camera.hikvision, show_name: false, show_state: false,
+    title: Hikvision, type: picture-entity}
   - cards:
     - entity: switch.sonoff_dual_power_1
       icon: mdi:door
@@ -40,27 +40,22 @@ views:
   id: home
   title: Home
 - cards:
-  - cards:
-    - {entity_current_conditions: sensor.dark_sky_icon, entity_daily_summary: sensor.dark_sky_daily_summary,
-      entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1, entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2,
-      entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3, entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4,
-      entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5, entity_forecast_icon_1: sensor.dark_sky_icon_1,
-      entity_forecast_icon_2: sensor.dark_sky_icon_2, entity_forecast_icon_3: sensor.dark_sky_icon_3,
-      entity_forecast_icon_4: sensor.dark_sky_icon_4, entity_forecast_icon_5: sensor.dark_sky_icon_5,
-      entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1, entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2,
-      entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3, entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4,
-      entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5, entity_humidity: sensor.dark_sky_humidity,
-      entity_pressure: sensor.dark_sky_pressure, entity_sun: sun.sun, entity_temperature: sensor.dark_sky_temperature,
-      entity_visibility: sensor.dark_sky_visibility, entity_wind_bearing: sensor.dark_sky_wind_bearing,
-      entity_wind_speed: sensor.dark_sky_wind_speed, type: 'custom:weather-card'}
-    - {aspect_ratio: 75%, type: iframe, url: 'https://embed.windy.com/embed2.html?lat=55.166&lon=24.148&zoom=6&level=surface&overlay=rain&message=true&calendar=now&location=coordinates'}
-    - break
-    - {aspect_ratio: 75%, type: iframe, url: 'https://grafana.saltis.duckdns.org/d-solo/7fCbHlLiz/sonoff?orgId=1&panelId=2&refresh=60s'}
-    layout: vertical
-    type: custom:layout-card
+  - {entity_current_conditions: sensor.dark_sky_icon, entity_daily_summary: sensor.dark_sky_daily_summary,
+    entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1, entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2,
+    entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3, entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4,
+    entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5, entity_forecast_icon_1: sensor.dark_sky_icon_1,
+    entity_forecast_icon_2: sensor.dark_sky_icon_2, entity_forecast_icon_3: sensor.dark_sky_icon_3,
+    entity_forecast_icon_4: sensor.dark_sky_icon_4, entity_forecast_icon_5: sensor.dark_sky_icon_5,
+    entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1, entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2,
+    entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3, entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4,
+    entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5, entity_humidity: sensor.dark_sky_humidity,
+    entity_pressure: sensor.dark_sky_pressure, entity_sun: sun.sun, entity_temperature: sensor.dark_sky_temperature,
+    entity_visibility: sensor.dark_sky_visibility, entity_wind_bearing: sensor.dark_sky_wind_bearing,
+    entity_wind_speed: sensor.dark_sky_wind_speed, type: 'custom:weather-card'}
+  - {aspect_ratio: 75%, type: iframe, url: 'https://embed.windy.com/embed2.html?lat=55.166&lon=24.148&zoom=6&level=surface&overlay=rain&message=true&calendar=now&location=coordinates'}
+  - {aspect_ratio: 75%, type: iframe, url: 'https://grafana.saltis.duckdns.org/d-solo/7fCbHlLiz/sonoff?orgId=1&panelId=2&refresh=60s'}
   icon: mdi:cloud
   id: weather
-  panel: true
   title: Weather
 - cards:
   - entities:
