@@ -9,8 +9,6 @@ resources:
     type: module
   - url: /local/resources/text-divider-row.js
     type: module
-  - url: /local/resources/camera-card.js
-    type: module
 
 title: Home
 views: 

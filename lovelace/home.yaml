@@ -2,8 +2,12 @@ title: Home
 icon: mdi:home
 path: home
 cards:
-  - type: 'custom:camera-card'
+  - type: picture-entity
     entity: camera.hikvision
+    aspect_ratio: 4x3
+    show_name: false
+    show_state: false
+    camera_view: live
 
   - type: horizontal-stack
     cards:
