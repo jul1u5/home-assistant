@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/components/weather
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api

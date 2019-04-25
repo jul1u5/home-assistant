@@ -1,13 +1,9 @@
 title: Home
 icon: mdi:home
-id: home
+path: home
 cards:
-  - type: picture-entity
-    title: Hikvision
+  - type: 'custom:camera-card'
     entity: camera.hikvision
-    aspect_ratio: 4x3
-    show_name: false
-    show_state: false
 
   - type: horizontal-stack
     cards:
@@ -33,11 +29,3 @@ cards:
   - type: iframe
     url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?orgId=1&panelId=6&refresh=60s
     aspect_ratio: 75%
-
-  - type: entities
-    title: SpeedTest
-    show_header_toggle: false
-    entities:
-      - sensor.speedtest_download
-      - sensor.speedtest_ping
-      - sensor.speedtest_upload

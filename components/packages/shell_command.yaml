@@ -1,4 +1,0 @@
-# https://www.home-assistant.io/components/system_health/
-
-shell_command:
-  lovelace_gen: python /config/python_scripts/lovelace-gen.py

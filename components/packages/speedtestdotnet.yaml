@@ -1,9 +1,0 @@
-# https://www.home-assistant.io/components/speedtestdotnet/
-
-speedtestdotnet:
-  scan_interval:
-    days: 1
-  monitored_conditions:
-    - ping
-    - download
-    - upload

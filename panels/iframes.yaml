@@ -12,8 +12,3 @@ chronograf:
   title: Chronograf
   url: !secret chronograf_url
   icon: mdi:timer
-
-tasmoadmin:
-  title: TasmoAdmin
-  url: !secret tasmoadmin_url
-  icon: mdi:home-automation

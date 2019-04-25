@@ -1,6 +1,6 @@
 title: Settings
 icon: mdi:settings
-id: settings
+path: settings
 cards:
   - type: custom:tracker-card
     title:
