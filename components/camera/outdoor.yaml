@@ -4,10 +4,3 @@
   username: !secret hikvision_username
   password: !secret hikvision_password
   authentication: digest
-
-# - platform: synology
-#   url: https://saltis.duckdns.org
-#   name: synology_cam
-#   username: !secret synology_username
-#   password: !secret synology_password
-

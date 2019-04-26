@@ -14,10 +14,12 @@ homeassistant:
 
   packages: !include_dir_named components/packages
 
-camera: !include_dir_merge_list components/cameras
-group: !include_dir_merge_list components/groups
-sensor: !include_dir_merge_list components/sensors
-switch: !include_dir_merge_list components/switches
+camera: !include_dir_merge_list components/camera
+group: !include_dir_merge_list components/group
+light: !include_dir_merge_list components/light
+lock: !include_dir_merge_list components/lock
+sensor: !include_dir_merge_list components/sensor
+switch: !include_dir_merge_list components/switch
 
 automation: !include_dir_merge_list automations
 panel_iframe: !include panels/iframes.yaml

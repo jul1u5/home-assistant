@@ -1,0 +1,4 @@
+# https://www.home-assistant.io/components/google_assistant/
+
+google_assistant:
+  project_id: saltis-cloud
