@@ -2,3 +2,4 @@
 
 google_assistant:
   project_id: saltis-cloud
+  secure_devices_pin: !secret google_home_pin
