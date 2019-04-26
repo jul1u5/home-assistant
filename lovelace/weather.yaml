@@ -2,20 +2,11 @@ title: Weather
 icon: mdi:cloud
 path: weather
 cards:
-  - type: custom:simple-weather-card
-    entity: weather.dark_sky
-    name: in Kaunas
-    backdrop:
-      day: "var(--primary-color)"
-      night: "#40445a"
+  - type: custom:compact-custom-header
 
   - type: iframe
     url: https://embed.windy.com/embed2.html?lat=55.166&lon=24.148&zoom=6&level=surface&overlay=rain&message=true&calendar=now&location=coordinates
     aspect_ratio: 75%
-
-  # - type: iframe
-  #   url: https://grafana.saltis.duckdns.org/d-solo/7fCbHlLiz/sonoff?orgId=1&panelId=2&refresh=60s
-  #   aspect_ratio: 75%
 
   - type: vertical-stack
     cards:

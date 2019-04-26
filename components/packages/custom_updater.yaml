@@ -1,7 +1,7 @@
 # https://github.com/custom-components/custom_updater/wiki/Installation
 
 custom_updater:
-  show_installable: True
+  show_installable: false
   track:
     - cards
     - components

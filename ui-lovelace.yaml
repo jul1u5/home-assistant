@@ -1,17 +1,17 @@
 resources:
-  - url: /local/resources/tracker-card.js
+  - url: /customcards/github/custom-cards/tracker-card.js?track=true
     type: js
-  - url: /local/resources/mini-media-player-bundle.js
+  - url: /customcards/github/kalkih/mini-graph-card-bundle.js?track=true
     type: module
-  - url: /local/resources/mini-graph-card-bundle.js
+  - url: /customcards/github/kalkih/simple-weather-card.bundle.js?track=true
     type: module
-  - url: /local/resources/simple-weather-card.bundle.js
+  - url: /customcards/github/custom-cards/text-divider-row.js?track=true
     type: module
-  - url: /local/resources/text-divider-row.js
+  - url: /customcards/github/maykar/compact-custom-header.js?track=true
     type: module
 
 title: Home
-views: 
+views:
   - !include /config/lovelace/home.yaml
   - !include /config/lovelace/weather.yaml
   - !include /config/lovelace/vacuum.yaml

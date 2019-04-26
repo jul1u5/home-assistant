@@ -2,6 +2,8 @@ title: Vacuum
 icon: mdi:robot-vacuum
 path: vacuum
 cards:
+  - type: custom:compact-custom-header
+
   - type: conditional
     conditions:
       - entity: vacuum.xiaomi_vacuum_cleaner
@@ -12,6 +14,7 @@ cards:
         # Unavailable
 
         Vaccum cleaner is offline
+
   - type: conditional
     conditions:
       - entity: vacuum.xiaomi_vacuum_cleaner
