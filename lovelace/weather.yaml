@@ -16,7 +16,6 @@ cards:
         height: 200
         hours_to_show: 168
         points_per_hour: 0.2
-        align_icon: left
         show:
           labels: true
           name: false
@@ -34,7 +33,6 @@ cards:
         height: 200
         hours_to_show: 168
         points_per_hour: 0.2
-        align_icon: left
         line_color: '#3498db'
         show:
           labels: true
