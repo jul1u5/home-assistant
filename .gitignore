@@ -15,5 +15,4 @@ __pycache__/
 
 # Configuration
 www/lovelace/
-files/*
 secrets.yaml

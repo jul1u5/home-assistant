@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/components/vacuum.xiaomi_miio/
+
+platform: xiaomi_miio
+host: 192.168.1.244
+token: !secret vacuum_token

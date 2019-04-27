@@ -1,0 +1,3 @@
+title: Chronograf
+url: !secret chronograf_url
+icon: mdi:timer

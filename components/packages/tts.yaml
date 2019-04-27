@@ -1,4 +1,0 @@
-# https://www.home-assistant.io/components/tts/
-
-tts:
-  - platform: google_translate

@@ -1,0 +1,3 @@
+title: Solar
+url: !secret grafana_url
+icon: mdi:white-balance-sunny
