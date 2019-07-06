@@ -1,0 +1,7 @@
+# https://www.home-assistant.io/components/netatmo
+
+netatmo:
+  api_key: 5cfa4b2be95323a43d1d2f05
+  secret_key: CT1XezZm8mezKvZU7s1ogK2bkZpYIwFL
+  username: !secret netatmo_username
+  password: !secret netatmo_password
