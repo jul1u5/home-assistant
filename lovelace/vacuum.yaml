@@ -2,8 +2,6 @@ title: Vacuum
 icon: mdi:robot-vacuum
 path: vacuum
 cards:
-  - type: custom:compact-custom-header
-
   - type: conditional
     conditions:
       - entity: vacuum.xiaomi_vacuum_cleaner
@@ -62,10 +60,13 @@ cards:
             - entity: sensor.vacuum_cleaning_time
               icon: mdi:clock-outline
             - entity: sensor.vacuum_cleaned_area
-            - type: 'custom:text-divider-row'
-              text: condition
-            - entity: sensor.vacuum_cleaning_count
-            - entity: sensor.vacuum_main_brush_left
-            - entity: sensor.vacuum_side_brush_left
-            - entity: sensor.vacuum_filter_left
-            - entity: sensor.vacuum_sensor_dirty_left
+            - type: custom:fold-entity-row
+              head:
+                type: section
+                label: Condition
+              items:
+                - entity: sensor.vacuum_cleaning_count
+                - entity: sensor.vacuum_main_brush_left
+                - entity: sensor.vacuum_side_brush_left
+                - entity: sensor.vacuum_filter_left
+                - entity: sensor.vacuum_sensor_dirty_left

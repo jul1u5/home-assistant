@@ -2,8 +2,6 @@ title: Settings
 icon: mdi:settings
 path: settings
 cards:
-  - type: custom:compact-custom-header
-
   - type: custom:tracker-card
     title:
     trackers:

@@ -2,8 +2,6 @@ title: Weather
 icon: mdi:cloud
 path: weather
 cards:
-  - type: custom:compact-custom-header
-
   - type: iframe
     url: https://embed.windy.com/embed2.html?lat=55.166&lon=24.148&zoom=6&level=surface&overlay=rain&message=true&calendar=now&location=coordinates
     aspect_ratio: 75%
@@ -11,6 +9,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: custom:mini-graph-card
+        name: Temperature
         entities:
           - sensor.sonoff_th10_temperature
         height: 200
@@ -18,7 +17,6 @@ cards:
         points_per_hour: 0.2
         show:
           labels: true
-          name: false
         color_thresholds:
           - value: -20
             color: '#3498db'
@@ -28,6 +26,7 @@ cards:
             color: '#c0392b'
 
       - type: custom:mini-graph-card
+        name: Humidity
         entities:
           - sensor.sonoff_th10_humidity
         height: 200
@@ -36,4 +35,3 @@ cards:
         line_color: '#3498db'
         show:
           labels: true
-          name: false

@@ -2,10 +2,6 @@ title: Home
 icon: mdi:home
 path: home
 cards:
-  - type: custom:compact-custom-header
-    main_config: true
-    voice: overflow
-
   - type: vertical-stack
     cards:
       - type: custom:simple-weather-card
@@ -46,5 +42,5 @@ cards:
               action: toggle
 
   - type: iframe
-    url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/saltis?orgId=1&panelId=6&refresh=60s
+    url: https://grafana.saltis.duckdns.org/d-solo/hxf61m5iz/solar?orgId=1&panelId=6&refresh=60s
     aspect_ratio: 75%

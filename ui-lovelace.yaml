@@ -1,6 +1,10 @@
 resources:
   - url: /customcards/github/custom-cards/tracker-card.js?track=true
     type: js
+  - url: /customcards/github/thomasloven/card-tools.js?track=true
+    type: js
+  - url: /customcards/github/thomasloven/fold-entity-row.js?track=true
+    type: module
   - url: /customcards/github/kalkih/mini-graph-card-bundle.js?track=true
     type: module
   - url: /customcards/github/kalkih/simple-weather-card.bundle.js?track=true
@@ -9,6 +13,10 @@ resources:
     type: module
   - url: /customcards/github/maykar/compact-custom-header.js?track=true
     type: module
+
+cch:
+  voice: overflow
+  swipe: true
 
 title: Home
 views:
