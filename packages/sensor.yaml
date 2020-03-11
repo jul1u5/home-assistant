@@ -1,3 +1,3 @@
 # https://www.home-assistant.io/components/sensor/
 
-sensor: !include_dir_merge_list ../sensor
+sensor: !include_dir_merge_list ../entity/sensor

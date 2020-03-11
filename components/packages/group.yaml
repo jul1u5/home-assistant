@@ -1,3 +1,0 @@
-# https://www.home-assistant.io/components/group/
-
-group: !include_dir_named ../group

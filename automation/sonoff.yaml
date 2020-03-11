@@ -1,5 +1,4 @@
 - alias: Lock gates after opening them
-  initial_state: ON
   trigger:
     platform: mqtt
     topic: sonoff-dual/stat/POWER1
@@ -13,7 +12,6 @@
         payload: 'OFF'
 
 - alias: Close garage doors
-  initial_state: ON
   trigger:
     platform: mqtt
     topic: sonoff-dual/stat/POWER2
