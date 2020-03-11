@@ -1,26 +1,4 @@
-resources:
-  - url: /customcards/github/custom-cards/tracker-card.js?track=true
-    type: js
-  - url: /customcards/github/thomasloven/card-tools.js?track=true
-    type: js
-  - url: /customcards/github/thomasloven/fold-entity-row.js?track=true
-    type: module
-  - url: /customcards/github/kalkih/mini-graph-card-bundle.js?track=true
-    type: module
-  - url: /customcards/github/kalkih/simple-weather-card.bundle.js?track=true
-    type: module
-  - url: /customcards/github/custom-cards/text-divider-row.js?track=true
-    type: module
-  - url: /customcards/github/maykar/compact-custom-header.js?track=true
-    type: module
-
-cch:
-  voice: overflow
-  swipe: true
-
 title: Home
-views:
-  - !include lovelace/home.yaml
-  - !include lovelace/weather.yaml
-  - !include lovelace/vacuum.yaml
-  - !include lovelace/settings.yaml
+resources: !include_dir_list lovelace/resources
+custom_header: !include lovelace/custom_header.yaml
+views: !include_dir_list lovelace/views

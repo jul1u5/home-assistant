@@ -1,0 +1,20 @@
+chevrons: false
+hide_config: true
+hide_help: true
+exceptions:
+  - conditions:
+      user_agent: Mobile
+    config:
+      tab_indicator_color: transparent
+      compact_mode: true
+      footer_mode: true
+      chevrons: false
+      all_tabs_css: >-
+        width: calc(25vw - 3.6px) !important;
+        padding: 0px !important;
+      header_css: >-
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      view_css: >-
+        padding-left: 8px !important;
+        padding-right: 8px !important;

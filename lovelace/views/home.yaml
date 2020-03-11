@@ -1,0 +1,46 @@
+title: Home
+icon: mdi:home
+path: home
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:simple-weather-card
+        entity: weather.dark_sky
+        name: in Kaunas
+        backdrop:
+          day: var(--primary-color)
+          night: '#40445a'
+
+      - type: picture-entity
+        entity: camera.hikvision
+        aspect_ratio: 4x3
+        show_name: false
+        show_state: false
+        camera_view: live
+
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: switch.sonoff_dual_power_1
+            name: Gates
+            icon: mdi:door
+            tap_action:
+              action: toggle
+
+          - type: entity-button
+            entity: switch.sonoff_dual_power_2
+            name: Garage
+            icon: mdi:garage
+            tap_action:
+              action: toggle
+
+          - type: entity-button
+            entity: light.entryway_lights
+            name: Lights
+            icon: mdi:lightbulb
+            tap_action:
+              action: toggle
+
+  - type: iframe
+    url: !secret solar_powerflow_url
+    aspect_ratio: 75%
