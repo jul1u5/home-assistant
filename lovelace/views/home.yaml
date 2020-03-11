@@ -9,7 +9,7 @@ cards:
         name: in Kaunas
         backdrop:
           day: var(--primary-color)
-          night: '#40445a'
+          night: var(--paper-card-background-color)
 
       - type: picture-entity
         entity: camera.hikvision
