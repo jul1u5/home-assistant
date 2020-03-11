@@ -1,5 +1,5 @@
 - platform: mqtt
-  name: Sonoff TH10 power
+  name: Sonoff TH10
   state_topic: sonoff-th10/stat/POWER
   command_topic: sonoff-th10/cmnd/POWER
   availability_topic: sonoff-th10/tele/LWT
